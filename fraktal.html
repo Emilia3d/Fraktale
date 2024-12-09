@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rysowanie Fraktala</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #canvas-holder {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Rysowanie Fraktala</h1>
+  <label for="degree">Wybierz stopień fraktala:</label>
+  <input type="number" id="degree" value="5" min="1" max="10">
+  <button onclick="drawFractal()">Rysuj Fraktal</button>
+  <div id="canvas-holder"></div>
+
+  <script>
+    let canvas;
+
+    function setup() {
+      canvas = createCanvas(800, 600);
+      canvas.parent('canvas-holder'); // Dodajemy canvas do div
+      noLoop();
+    }
+
+    function drawFractal() {
+      clear(); // Czyści canvas przed rysowaniem nowego fraktala
+      const degree = parseInt(document.getElementById('degree').value);
+      drzewoBinarne(degree, width / 2, height, 120, PI / 2);
+    }
+
+    function drzewoBinarne(n, x, y, d, angle) {
+      if (n === 0) return;
+
+      const x1 = x + d * cos(angle);
+      const y1 = y - d * sin(angle);
+
+      stroke(0);
+      line(x, y, x1, y1);
+
+      drzewoBinarne(n - 1, x1, y1, d * 0.7, angle + PI / 6); // Gałąź w prawo
+      drzewoBinarne(n - 1, x1, y1, d * 0.7, angle - PI / 6); // Gałąź w lewo
+    }
+  </script>
+</body>
+</html>
