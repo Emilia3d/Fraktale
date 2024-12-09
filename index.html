@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drzewo binarne</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script> //dodanie biblioteki p5.js
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -48,8 +48,8 @@
       stroke('red');
       line(x, y, x1, y1);
 
-      drzewoBinarne(n - 1, x1, y1, d * 0.7, angle + PI / 6); // Gałąź w prawo
-      drzewoBinarne(n - 1, x1, y1, d * 0.7, angle - PI / 6); // Gałąź w lewo
+      drzewoBinarne(n - 1, x1, y1, d * 0.5, angle + PI / 6); // Gałąź w prawo
+      drzewoBinarne(n - 1, x1, y1, d * 0.5, angle - PI / 6); // Gałąź w lewo
     }
   </script>
 </body>
