@@ -30,13 +30,12 @@
     function setup() {
       canvas = createCanvas(800, 600);
       canvas.parent('canvas-holder'); // Dodajemy canvas do div
-      noLoop();
     }
 
     function drawFractal() {
       clear(); // Czyści canvas przed rysowaniem nowego fraktala
       const stopien = parseInt(document.getElementById('stopien').value);
-      drzewoBinarne(stopien, width / 2, height, 120, PI / 2);
+      drzewoBinarne(stopien, width / 2, height, 150, PI / 2);
     }
 
     function drzewoBinarne(n, x, y, d, angle) {
