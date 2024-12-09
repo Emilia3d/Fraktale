@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> //ustawia responsywnosc
   <title>Drzewo binarne</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script> //dodanie biblioteki p5.js
   <style>
@@ -20,7 +20,7 @@
 <body>
   <h1>Rysowanie Fraktala</h1>
   <label for="stopien">Wybierz stopień fraktala:</label>
-  <input type="number" id="stopien" value="5" min="1" max="10">
+  <input type="number" id="stopien" value="3" min="1" max="5">
   <button onclick="drawFractal()">Rysuj Fraktal</button>
   <div id="canvas-holder"></div>
 
@@ -45,11 +45,11 @@
       const x1 = x + d * cos(angle);
       const y1 = y - d * sin(angle);
 
-      stroke('red');
+      stroke(#008080);
       line(x, y, x1, y1);
 
-      drzewoBinarne(n - 1, x1, y1, d * 0.5, angle + PI / 6); // Gałąź w prawo
-      drzewoBinarne(n - 1, x1, y1, d * 0.5, angle - PI / 6); // Gałąź w lewo
+      drzewoBinarne(n - 1, x1, y1, d * 0.5, angle + PI / 4); // Gałąź w prawo
+      drzewoBinarne(n - 1, x1, y1, d * 0.5, angle - PI / 4); // Gałąź w lewo
     }
   </script>
 </body>
